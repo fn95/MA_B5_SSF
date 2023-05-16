@@ -28,6 +28,14 @@ Hasil rangkaian dengan kode akan mendeteksi objek penghalang (mobil) yang ditang
 
 ## Test results and performance evaluation 
 
+Performa Evaluation
+Kode program diperiksa untuk memastikan tidak ada kesalahan sintaks. Setelah itu, program diinisialisasi sebelum dijalankan.
+Sebelum menjalankan program, rangkaian dipastikan terlebih dahulu apakah sudah sesuai dengan desain, termasuk penempatan pin, sensor ultrasonik, dan servo motor mini. Program akan mendeteksi objek penghalang, seperti mobil, yang berada dalam jangkauan sensor ultrasonik HC-SR04. Sensor ini akan mengukur jarak ke objek, dan jika jaraknya kurang dari 10 cm, berarti objek mendekati gerbang.
+
+Jika objek masih berjarak lebih dari 10 cm, program tidak melakukan apa-apa. Perhitungan jarak dilakukan dengan menggunakan rumus distance=(0.034*tmeduration)/2, di mana tmeduration adalah durasi pulsa dari sensor. Setelah itu, program akan menggerakkan servo motor untuk memutar gerbang sebesar 90 derajat, sehingga gerbang terbuka dan mobil dapat masuk ke garasi atau tempat parkir.
+
+Setelah mobil melewati gerbang dan menjauh dari sensor, gerbang akan ditutup dengan delay selama 1 milisekon. Program akan terus berulang sesuai dengan mode yang ditentukan, yaitu membuka gerbang, menutup gerbang, atau menahan gerbang saat objek tetap berada dalam jangkauan atau tidak bergerak
+
 ## Conclusion and Future Work  
 Proyek Automatic House Gate memberikan salah satu solusi dari kebutuhan akan metode yang efisien dan nyaman untuk mengelola tempat parkir. Proyek ini memanfaatkan Internet of Things (IoT) untuk menciptakan sistem gerbang otomatis yang mendeteksi keberadaan kendaraan dan mengatur masuk dan keluarnya kendaraan. Solusi yang diusulkan menggunakan Arduino Uno, Arduino IDE, dan sirkuit elektronik, bersama dengan sensor ultrasonik HC-SR04, untuk mengukur jarak antara sensor dan kendaraan.
 
